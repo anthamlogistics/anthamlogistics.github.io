@@ -4,58 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <script type="module">
-        // Import Firebase SDK
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-
-        // Firebase Configuration (Replace with your correct values)
-        const firebaseConfig = {
-            apiKey: "YOUR_NEW_API_KEY",
-            authDomain: "YOUR_PROJECT.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        // Login Function
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById("loginBtn").addEventListener("click", function () {
-                const email = document.getElementById("email").value;
-                const password = document.getElementById("password").value;
-
-                signInWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        alert("Login successful!");
-                        window.location.href = "dashboard.html"; // Redirect to admin panel
-                    })
-                    .catch((error) => {
-                        alert("Error: " + error.message);
-                    });
-            });
-        });
-
-        // Logout Function
-        document.getElementById("logoutBtn")?.addEventListener("click", function () {
-            signOut(auth).then(() => {
-                alert("Logged out successfully!");
-                window.location.href = "admin.html"; // Redirect to login page
-            }).catch((error) => {
-                alert("Error: " + error.message);
-            });
-        });
-
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Admin Login</h2>
-    <input type="email" id="email" placeholder="Enter Email">
-    <input type="password" id="password" placeholder="Enter Password">
-    <button id="loginBtn">Login</button>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="error-message"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
