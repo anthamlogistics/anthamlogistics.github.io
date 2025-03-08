@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script type="module">
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+
+        const auth = getAuth();
+
+        // Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "admin.html"; // Redirect to login page
+            }
+        });
+
+        // Logout Function
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                signOut(auth).then(() => {
+                    alert("Logged out successfully!");
+                    window.location.href = "admin.html";
+                }).catch((error) => {
+                    alert("Error: " + error.message);
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h2>Welcome, Admin!</h2>
+    <button id="logoutBtn">Logout</button>
+</body>
+</html>
