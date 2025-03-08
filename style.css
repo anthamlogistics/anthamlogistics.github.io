@@ -1,0 +1,407 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-btn {
+    background: #E63946;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background: #C92838;
+}
+/* Navigation Bar Section ends here */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Adjust height as needed */
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Overlay for text visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+}
+
+/* Text Content */
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF4500;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #e63e00;
+}
+
+
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+/* Hero Section ends here */
+
+/* About Section */
+.about {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    background: url('images/about-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+}
+
+/* Overlay for better text visibility */
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Text Content */
+.about-overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+}
+
+.about-overlay h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF4500;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #e63e00;
+}
+/* About Section ends here */
+
+/* Testimonials Section */
+.testimonials {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Testimonials Section ends here */
+
+/* Shipment Tracking Section */
+.tracking {
+    text-align: center;
+    background: url('images/tracking-bg.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    color: white;
+}
+
+.tracking-container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tracking input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.tracking button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tracking button:hover {
+    background: #e63e00;
+}
+
+#tracking-result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+/* Shipment Tracking Section ends here */
+
+
+/* Contact Section */
+.contact {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Google Form Button */
+.google-form-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #E63946;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.google-form-btn:hover {
+    background: #C92838;
+}
+
+/* Contact Section ends here */
+
+/* Services Section */
+.services {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    background: url('images/services-bg.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Dark Overlay for better text visibility */
+.services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure text is visible above the overlay */
+.services-overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.services p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Service Box Styling */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+}
+
+.service img {
+    width: 80px;
+    height: 80px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+/* Services Section ends here */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: black;
+    color: white;
+}
+/* Footer Section ends here */
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        margin-bottom: 20px;
+    }
+
+    .tracking input {
+        width: 100%;
+    }
+
+    .tracking button {
+        width: 100%;
+    }
+}
+/* Responsive Design for Mobile section ends here */
