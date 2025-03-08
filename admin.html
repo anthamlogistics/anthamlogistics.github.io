@@ -6,11 +6,6 @@
     <title>Admin Login | Antham Logistics</title>
     <link rel="stylesheet" href="admin-style.css">
     <script src="admin-login.js" defer></script>
-    <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
-<script src="firebase-config.js"></script> <!-- Your Firebase config -->
-<script src="admin.js"></script> <!-- Your admin panel logic -->
 
 </head>
 <body>
@@ -28,64 +23,6 @@
             <button id="verify-otp">Verify OTP</button>
         </div>
     </div>
-    <!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-
-  // Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBsyhtEFLkb7NDfo1dpbkOfx7cQyKZqlwU",
-  authDomain: "antham-logistics-admin-panel.firebaseapp.com",
-  projectId: "antham-logistics-admin-panel",
-  storageBucket: "antham-logistics-admin-panel.firebasestorage.app",
-  messagingSenderId: "329074259358",
-  appId: "1:329074259358:web:70ef86897ba7426476928f"
-};
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Function to handle admin login
-  function adminLogin() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("Login Successful!");
-        window.location.href = "dashboard.html"; // Redirect after login
-      })
-      .catch((error) => {
-        alert("Login Failed: " + error.message);
-      });
-  }
-
-  // Function to log out admin
-  function adminLogout() {
-    signOut(auth)
-      .then(() => {
-        alert("Logged out successfully!");
-        window.location.href = "admin.html"; // Redirect to login page
-      })
-      .catch((error) => {
-        alert("Logout Failed: " + error.message);
-      });
-  }
-
-  // Check if user is logged in
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("Admin Logged In: " + user.email);
-    } else {
-      console.log("No Admin Logged In");
-      if (window.location.pathname.includes("dashboard.html")) {
-        window.location.href = "admin.html"; // Redirect unauthorized users
-      }
-    }
-  });
-</script>
 
 </body>
 </html>
