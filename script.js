@@ -36,3 +36,38 @@ function trackShipment() {
     document.getElementById("tracking-result").innerHTML = result;
 }
 
+// Hardcoded admin credentials (Replace these with your actual username & password)
+const adminUsername = "anthamlogistics";
+const adminPassword = "Wifey_Reepu@2901";
+
+// Login Function
+function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === adminUsername && password === adminPassword) {
+        sessionStorage.setItem("adminLoggedIn", "true");
+        window.location.href = "admin-dashboard.html"; // Redirect to Admin Panel
+    } else {
+        document.getElementById("error-message").innerText = "Invalid Credentials!";
+    }
+}
+
+// Logout Function
+function logout() {
+    sessionStorage.removeItem("adminLoggedIn");
+    window.location.href = "admin.html"; // Redirect to Login Page
+}
+
+// Check if admin is logged in (For admin-dashboard.html)
+if (window.location.pathname.includes("admin-dashboard.html")) {
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "admin.html"; // Redirect to Login if not logged in
+    }
+}
+
+
+
+
+
+
