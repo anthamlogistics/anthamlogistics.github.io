@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container, .admin-panel {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background: #FF4500;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.logout {
+    display: inline-block;
+    margin-top: 20px;
+    color: red;
+    text-decoration: none;
+}
