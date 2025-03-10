@@ -24,6 +24,11 @@ function trackShipment() {
         return;
     }
 
+function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+    
     // Simulated tracking data (replace with API in the future)
     let fakeTrackingData = {
         "123456": "Out for delivery 🚚",
