@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+function toggleMenu() {
+    let navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("nav-active");
+}
+
 function trackShipment() {
     let trackingNumber = document.getElementById("tracking-number").value;
 
     if (trackingNumber === "") {
         alert("Please enter a tracking number!");
         return;
-    }
-
-function toggleMenu() {
-    const menu = document.querySelector("nav ul");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-    
+    }    
     // Simulated tracking data (replace with API in the future)
     let fakeTrackingData = {
         "123456": "Out for delivery 🚚",
