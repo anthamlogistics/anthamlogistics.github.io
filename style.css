@@ -210,24 +210,40 @@ nav ul li a {
     background: #e63e00;
 }
 
-/* Contact */
+/* Contact Section Styling */
 .contact {
     background: #222;
     color: white;
     padding: 50px 20px;
+    text-align: center;
+    position: relative; /* Ensures the button positions correctly */
 }
 
+/* Google Form Button */
 .google-form-btn {
+    display: inline-block; /* Prevents overlap issues */
+    margin-top: 20px; /* Adds space above the button */
     padding: 12px 20px;
     background: #E63946;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background 0.3s;
+    font-size: 16px;
 }
 
+/* Button Hover Effect */
 .google-form-btn:hover {
-    background: #C92838;
+    background: #C92D3A;
+}
+
+/* Ensure proper spacing on small screens */
+@media screen and (max-width: 768px) {
+    .google-form-btn {
+        width: 80%; /* Makes the button more responsive */
+        padding: 14px;
+        font-size: 18px;
+    }
 }
 
 /* Footer */
